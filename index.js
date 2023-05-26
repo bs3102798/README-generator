@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer= require('inquirer');
 const generateMarkdown= require('./utils/generateMarkdown');
 const utils = require('utils');
-const { error } = require('console');
+//const { error } = require('console');
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -90,15 +90,28 @@ function writeToFile(fileName, data) {
 }
 //const createReadme = util.promisify(writeToFile)
 // TODO: Create a function to initialize app
-function init() {
-    prompt(questions).then((reponse) => {
-        console.log("making the readme...");
-        writeToFile("./dist/README.md", generateMarkdown({ ...reponse }));
-    })
+const createReadme = utils.promisify(writeToFile);
+
+ async function init() {
+    try{
+        const userAnswers = await inquirer.prompt(questions);
+        console.log('thanks!! the current data is being processed into your README.md:', userAnswers);
+
+        const myMarkdown = generateMarkdown(userAnswers);
+        console.log(myMarkdown);
+        
+        await createReadme('README1.md', myMarkdown);
+
+    } catch(error) {
+        console.log('sorry there was an error,' + error);
+    }
 
 
 
-}
+    // prompt(questions).then((reponse) => {
+    //     console.log("making the readme...");
+    //     writeToFile("./dist/README.md", generateMarkdown({ ...reponse }));
+};
 
 // Function call to initialize app
 init();
