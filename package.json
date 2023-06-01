@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.5",
+    "inquirer": "^8.2.4",
     "install": "^0.13.0"
   },
   "name": "readme-generator",

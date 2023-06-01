@@ -32,31 +32,47 @@ function renderLicenseBadge(license) {
     by ${data.title}
     ${renderLicenseBadge(data.license)}
   ##Table of Contents 
-  *[description](description)d
+  *[description](description)
+
   *[installation](installation)
+ 
   *[usageInformation](usageInformation)
+ 
   *[contribution](contribution)
+ 
   *[guidelines](guidelines)
+ 
   *[ContactInfo](ContactInfo)
+ 
   *[testInstructions](testInstructions)
+ 
   *[licenses](licenses)
+ 
   ${renderLicenseLink(data.license)}
   ##Description
   ${data.description}
+ 
   ##Installation
   ${data.installation}
+ 
   ##UsageInfrmaion
   ${data.usageInfromation}
+ 
   ##Contribution
   ${data.contribution}
+ 
   ##Guidelines
   ${data.guidelines}
+ 
   ##Contact Information
+ 
   *Name-${data.Name}
   *Email-${data.emailAddress}
   *GitHub-${data.GitHub}
+ 
   ## Testing
   ${data.testInstructions}
+ 
   ## Licenses
   ${data.license}
   ${renderLicenseSection(data.license)}

@@ -23,12 +23,12 @@ const questions = [{
 {
     type: 'input',
     name: 'usageInformation',
-    message: 'Do you want to give instructions for the application?',
+    message: 'Do you want to give instructions for the application?(yes/no)',
 },
 {
     type: 'input',
     name: 'contribution',
-    message: 'Do you want to give permission for other Developers to this repository?',
+    message: 'Do you want to give permission for other Developers to this repository? (yes/no)',
 },
 {
     type: 'input',
@@ -54,14 +54,6 @@ const questions = [{
         'Boost Software License 1.0',
         'The Unlicense',
     ],
-    // validate: nameInput => {
-    //     if (nameInput) {
-    //         return true;
-    //     } else {
-    //         console.log('We need a proper license. (This is spelling sensitive)');
-    //         return false;
-    //     }
-    // }
 },
 {
     type: 'input',
@@ -108,9 +100,6 @@ const createReadme = utils.promisify(writeToFile);
 
 
 
-    // prompt(questions).then((reponse) => {
-    //     console.log("making the readme...");
-    //     writeToFile("./dist/README.md", generateMarkdown({ ...reponse }));
 };
 
 // Function call to initialize app
